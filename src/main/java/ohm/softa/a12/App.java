@@ -64,7 +64,7 @@ public abstract class App {
     private static Stream<JokeDto> readJokeSource() {
         System.out.println("Which joke source do you want to use?");
         System.out.println("1) Random jokes");
-        System.out.println("2) Linear by id");
+        System.out.println("2) All jokes");
 
         do {
             try {
