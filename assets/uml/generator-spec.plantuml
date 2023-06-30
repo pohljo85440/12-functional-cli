@@ -12,15 +12,13 @@ package ohm.softa.a12.icndb {
         +allJokesStream(): Stream<JokeDto>
     }
 
-    package suppliers {
-        class AllJokesSupplier implements Supplier {
-        }
+    class AllJokesIterator implements Iterator {
+	}
 
-        class RandomJokeSupplier implements Supplier {
-        }
-    }
+	class RandomJokeSupplier implements Supplier {
+	}
 
-    JokeGenerator -- AllJokesSupplier : "uses"
+    JokeGenerator -- AllJokesIterator : "uses"
     JokeGenerator -- RandomJokeSupplier : "uses"
 }
 

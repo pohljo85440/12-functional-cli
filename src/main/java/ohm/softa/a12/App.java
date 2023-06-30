@@ -8,14 +8,7 @@ import java.util.stream.Stream;
 
 public abstract class App {
 
-    /**
-     * Scanner to read input from the STDIN
-     */
     private static final Scanner inputScanner = new Scanner(System.in);
-
-    /**
-     * Stream generator
-     */
     private static final JokeGenerator jokeGenerator = new JokeGenerator();
 
     public static void main(String[] args) {
@@ -31,7 +24,7 @@ public abstract class App {
             Stream<JokeDto> jokesSource = readJokeSource();
 
             /* TODO consume the `jokesSource`
-             * filter it for non null objects
+             * filter such jokes that are longer than 80 characters (typical terminal width)
              * use `skip` and `limit` to retrieve the required elements
              * and print the jokes to the STDOUT */
 

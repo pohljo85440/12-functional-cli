@@ -17,7 +17,7 @@ public class ICNDBTests {
 	private CNJDBApi icndbApi;
 
 	public ICNDBTests() {
-		this.icndbApi = new CNJDBService().getInstance();
+		this.icndbApi = CNJDBService.getInstance();
 	}
 
 	@Test
@@ -27,7 +27,7 @@ public class ICNDBTests {
 		var collision = false;
 
 		while (requests++ < REQUEST_COUNT) {
-			var joke = icndbApi.getRandomJoke().get();
+			var joke = icndbApi.getRandomJoke();
 
 			if (ids.contains(joke.getId())) {
 				logger.info(String.format("Collision at joke %s", joke.getId()));
@@ -44,7 +44,7 @@ public class ICNDBTests {
 
 	@Test
 	void testGetRandomJokeByCategory() throws ExecutionException, InterruptedException {
-		var j = icndbApi.getRandomJokeByCategory("food").get();
+		var j = icndbApi.getRandomJokeByCategory("food");
 		assertNotNull(j);
 		assertTrue(j.getCategories().contains("food"));
 		logger.info(j.toString());
@@ -52,7 +52,7 @@ public class ICNDBTests {
 
 	@Test
 	void testGetJokeById() throws ExecutionException, InterruptedException {
-		var j = icndbApi.getJoke("S5uiluahRM26CTWRZNXfwg").get();
+		var j = icndbApi.getJoke("S5uiluahRM26CTWRZNXfwg");
 		assertNotNull(j);
 		logger.info(j.toString());
 	}

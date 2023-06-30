@@ -8,16 +8,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public final class CNJDBService {
 
-    private final CNJDBApi api;
+    private static final CNJDBApi api;
 
-    /**
-     * Access the singleton instance
-     */
-    public CNJDBApi getInstance() {
+	private CNJDBService() {}
+
+
+	/// provide access to singleton
+    public static CNJDBApi getInstance() {
         return api;
     }
 
-    public CNJDBService() {
+	/// static initializer for the api instance
+    static {
         /* Initialize Retrofit */
         var retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.chucknorris.io")

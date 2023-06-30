@@ -12,20 +12,16 @@ import java.util.stream.Stream;
 public final class JokeGenerator {
 
     /**
-     * Generator for random jokes
-     * @return stream of random jokes wrapped in ResponseWrapper objects
+     * Generate an infinite Stream of random jokes using the RandomJokeSupplier
      */
     public Stream<JokeDto> randomJokesStream() {
-        /* TODO create new Stream of random jokes */
         throw new NotImplementedException("Method `randomJokeStream()` is not implemented");
     }
 
     /**
-     * Generator for jokes ordered by their id
-     * @return stream of jokes wrapped in ResponseWrapper objects
+     * Generator a finite Stream of jokes using the AllJokesIterator
      */
     public Stream<JokeDto> allJokesStream() {
-        /* TODO create a new Stream of all jokes, ie. retrieve random jokes until collision */
         throw new NotImplementedException("Method `allJokesStream()` is not implemented");
     }
 }
