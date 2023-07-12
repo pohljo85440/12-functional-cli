@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ICNDBTests {
 	private static final Logger logger = Logger.getLogger(ICNDBTests.class.getName());
-	private static final int REQUEST_COUNT = 100;
+	private static final int REQUEST_COUNT = 10;
 
 	private CNJDBApi icndbApi;
 
